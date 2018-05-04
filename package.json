@@ -1,0 +1,50 @@
+{
+  "name": "@momothepug/typescriptscaffolding",
+  "version": "0.3.0",
+  "description": "Typescript nodejs project template",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register -r tsconfig-paths/register src/**/*.spec.ts",
+    "build": "grunt build"
+  },
+  "engines": {
+    "node": ">=6.12.0"
+  },
+  "homepage": "https://github.com/momoThePug",
+  "keywords": [
+    "extend",
+    "modules",
+    "node",
+    "path",
+    "typescript",
+    "alias",
+    "resolve"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/momoThePug/typescriptscaffolding.git"
+  },
+  "author": "Daniel Vera Morales",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^9.4.5",
+    "rtrim": "^1.0.0",
+    "typescript": "^2.7.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.42",
+    "chai": "^4.1.2",
+    "grunt": "^1.0.2",
+    "grunt-bump": "^0.8.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-exec": "^3.0.0",
+    "mocha": "^3.5.0",
+    "ts-node": "^3.3.0",
+    "tsconfig-paths": "^3.1.1",
+    "tspath": "^1.2.10",
+    "typescript": "2.4.2"
+  }
+}

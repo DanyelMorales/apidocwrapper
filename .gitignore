@@ -1,0 +1,2 @@
+!./src/test/fake/**/node_modules
+./node_modules
