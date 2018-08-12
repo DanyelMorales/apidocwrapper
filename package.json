@@ -1,6 +1,6 @@
 {
   "name": "@momothepug/typescriptscaffolding",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Typescript nodejs project template",
   "main": "dist/index.js",
   "scripts": {
@@ -27,11 +27,10 @@
   "author": "Daniel Vera Morales",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^9.4.5",
     "rtrim": "^1.0.0",
-    "typescript": "^2.7.1"
   },
   "devDependencies": {
+    "@types/node": "^9.4.5",
     "@types/chai": "^4.0.4",
     "@types/mocha": "^2.2.42",
     "chai": "^4.1.2",
