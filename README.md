@@ -10,3 +10,9 @@ Some dependencies must be installed first (one by one, if you get an error try i
 - npm install mocha -g 
 - npm install grunt-cli -g 
 - npm install grunt -g
+
+## Features
+- Typescript support
+- Mocha tests
+- Grunt tasks
+- Grunt bumping (for fast semver taging and commit)
