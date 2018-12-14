@@ -39,6 +39,12 @@ module.exports = function(grunt) {
             cwd: "src",
             src: ["**/*", "!**/*.ts", "!**/test", "!**/*.map"],
             dest: "dist"
+          },
+          {
+            expand: true,
+            cwd: "./",
+            src: ["package.json", "!**/*.ts", "!**/test", "!**/*.map"],
+            dest: "dist"
           }
         ]
       }

@@ -1,7 +1,8 @@
 {
-  "name": "@momothepug/typescriptscaffolding",
-  "version": "0.3.1",
-  "description": "Typescript nodejs project template",
+  "name": "@momothepug/apidocmomowrapper",
+  "version": "0.0.0",
+  "description": "Apidocjs wrapper to automate documentation tasks by adding a new subset of features like documentation by namespaces and documentation triggered by file change.",
+  "preferGlobal": true,
   "main": "dist/index.js",
   "scripts": {
     "test": "mocha -r ts-node/register -r tsconfig-paths/register src/**/*.spec.ts",
@@ -10,24 +11,29 @@
   "engines": {
     "node": ">=6.12.0"
   },
+  "bin": {
+    "apidocjs": "./dist/bin/apidocjs.js"
+  },
   "homepage": "https://github.com/momoThePug",
   "keywords": [
     "extend",
-    "modules",
-    "node",
-    "path",
-    "typescript",
-    "alias",
-    "resolve"
+    "apidocjs",
+    "apidoc",
+    "api",
+    "documentation",
+    "restful",
+    "endpoint"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/danyelmorales/typescriptscaffolding.git"
   },
-  "author": "Daniel Vera Morales",
+  "author": "Daniel N. Vera Morales",
   "license": "MIT",
   "dependencies": {
+    "apidoc": "^0.17.7",
     "rtrim": "^1.0.0",
+    "winston": "^3.1.0"
   },
   "devDependencies": {
     "@types/node": "^9.4.5",
