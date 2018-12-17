@@ -1,16 +1,24 @@
+import { IApidocOption } from './IApidocOption';
 export interface IApidocWrapperConfig {
-    global: IApidocGlobalConfig,
-    groups: IApidocSingeOption[]
+    global: IWrapperGlobalConfig,
+    groups: IWrapperSingleOption[],
+    debug?: boolean,
+    debugWrapper?: boolean,
+    lineEnding?: string
 }
 
-export interface IApidocSingeOption {
-    sourceDir:string[],
-    groupName:string,
-    regex:string[]
+export interface IWrapperSingleOption {
+    sourceDir?: string[],
+    groupName: string,
+    regex: string[]
 }
 
-export interface IApidocGlobalConfig{
+export interface IWrapperGlobalConfig {
     configDir: string,
     outputDir: string
     sourceDir: string[]
+}
+
+export interface IApidocOptionCollection {
+    [index: string]: IApidocOption
 }

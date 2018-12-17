@@ -12,7 +12,7 @@
     "node": ">=6.12.0"
   },
   "bin": {
-    "apidocjs": "./dist/bin/apidocjs.js"
+    "apidocument": "./dist/bin/apidocwrapper.js"
   },
   "homepage": "https://github.com/momoThePug",
   "keywords": [
@@ -33,6 +33,7 @@
   "dependencies": {
     "apidoc": "^0.17.7",
     "rtrim": "^1.0.0",
+    "underscore": "^1.9.1",
     "winston": "^3.1.0"
   },
   "devDependencies": {

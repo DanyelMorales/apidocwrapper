@@ -1,0 +1,91 @@
+/**
+* APIDOCJS AUTO DOCUMENTOR.
+* ----------------------------------------------
+* This Grunt Module helps to document resources automagically.
+* Add a New Grunt Watch and Grunt Exec for each DocGroup, 
+* to add the config vals add to configGroup the required inputs.
+* ----------------------------------------------
+* @author Daniel Vera <dvera at sunset.com.mx>
+*/
+// COLLECTION OF CONFIG FOR SPECIFIC GROUP OF DOCUMENTATION
+var globalConfig = {
+	"configDir": "doc/apidoc/",
+	"outputDir": "doc/apidoc/",
+	"sourceDir": ["src/main/java/com/m4sg/crm4marketingsunset"]
+};
+
+var plantillaDeEmail = {
+				"sourceDir": [""],
+				"groupName":"emailplantillas", 
+				"regex":["**/Email*.java", "**/*.js"],
+				"regexapidoc":["Email.*\.java$", "Email.*\.js$"]
+};
+
+var pickups = {
+				"sourceDir": ["module/reservacion/pickup/"],
+				"groupName":"pickups", 
+				"regex":["!**/Pickup*.java", "**/*.java"],
+				"regexapidoc":["!Pickup.*\.java$",".*\.java$"]
+};				
+
+var sobreventa = {
+				"sourceDir": [""],
+				"groupName":"sobreventa", 
+				"regex":["/reservation/**/*.java", "**/*.js"],
+				"regexapidoc":["reservation\/.*\.java$"]
+};
+
+var CRM = {
+				"groupName":"CRM", 
+				"regex":["!**/Email*.java", "**/*.java"],
+				"regexapidoc":["!Email.*\.java$",".*\.java$"]
+};
+
+var hotel = {
+				"groupName":"hotel", 
+				"sourceDir": [""],
+				"regex":["**/Hotel*.java", "**/*.js"],
+				"regexapidoc":["Hotel.*\.java$", "Hotel.*\.js$"]
+};
+
+var cliente = {
+				"groupName":"cliente", 
+				"sourceDir": [""],
+				"regex":["**/Customer*.java", "**/*.js"],
+				"regexapidoc":["Customer.*\.java$", "Customer.*\.js$"]
+};
+
+var interes = {
+				"groupName":"interes", 
+				"sourceDir": [""],
+				"regex":["**/Feature*.java", "**/*.js"],
+				"regexapidoc":["Feature.*\.java$", "Feature.*\.js$"]
+};
+
+var aerolinea = {
+				"groupName":"Aerolineas", 
+				"sourceDir": ["s"],
+				"regex":["**/Airline*.java", "**/*.js"],
+				"regexapidoc":["Airline.*\.java$", "Airline.*\.js$"]
+};
+
+var crypto = {
+    "groupName":"CryptoCurrency",
+    "sourceDir":["module/CryptoCurrency/"],
+    "regex":["Bitcoin.*\.java$"]
+};
+
+var restcom = {
+    "groupName":"Resortcom",
+    "sourceDir":["module/OnlinePayments/"],
+    "regex":["Resortcom.*\.java$", "Resortcom.*\.js$"]
+};
+
+var groups = {
+	"global": globalConfig, 
+	"groups": [plantillaDeEmail, sobreventa, hotel, cliente, interes, CRM, pickups, aerolinea, crypto, restcom],
+	"debugWrapper": false,
+	"debug":false
+};
+
+module.exports = groups; 

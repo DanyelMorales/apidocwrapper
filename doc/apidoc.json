@@ -1,0 +1,10 @@
+{
+  "name": "API Certificados",
+  "version": "1.13.1",
+  "description": "Documentación de API para el módulo certificados",
+  "title": "API Certificados",
+  "url": "http://acuarius.it.sunset.com.mx:1010/v1",
+  "template": {
+    "forceLanguage": "es"
+  }
+}

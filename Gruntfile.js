@@ -20,7 +20,7 @@ module.exports = function(grunt) {
       }
     },
     clean: {
-      build: ["dist", "src/**/*.js"],
+      build: ["dist", "src/**/*.js", "src/**/*.d.ts"],
       postbuild: ["src/**/*.js"]
     },
     exec: {
@@ -38,12 +38,6 @@ module.exports = function(grunt) {
             expand: true,
             cwd: "src",
             src: ["**/*", "!**/*.ts", "!**/test", "!**/*.map"],
-            dest: "dist"
-          },
-          {
-            expand: true,
-            cwd: "./",
-            src: ["package.json", "!**/*.ts", "!**/test", "!**/*.map"],
             dest: "dist"
           }
         ]
