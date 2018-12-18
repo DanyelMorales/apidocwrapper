@@ -13,5 +13,7 @@ if (!fs.existsSync(configFilePath)) {
     TerminalLog_1.TerminalLog.err(`Not found ${configFile} in ${workingdir}`);
     process.exit(1);
 }
-const jsonConfig = require(configFilePath);
-ApidocWrapper_1.ApidocWrapper.build(workingdir, jsonConfig).document(["CryptoCurrency"]);
+else {
+    const jsonConfig = require(configFilePath);
+    ApidocWrapper_1.ApidocWrapper.build(workingdir, jsonConfig).document(["CryptoCurrency"]);
+}

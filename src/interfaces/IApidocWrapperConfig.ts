@@ -2,9 +2,23 @@ import { IApidocOption } from './IApidocOption';
 export interface IApidocWrapperConfig {
     global: IWrapperGlobalConfig,
     groups: IWrapperSingleOption[],
-    debug?: boolean,
     debugWrapper?: boolean,
-    lineEnding?: string
+    vendor?: {
+        debug?: boolean,
+        lineEnding?: string,
+        filters?: {
+            [index: string]: string
+        } | null,
+        languages?: {
+            [index: string]: string
+        } | null,
+        parsers?: {
+            [index: string]: string
+        } | null,
+        workers?: {
+            [index: string]: string
+        } | null,
+    }
 }
 
 export interface IWrapperSingleOption {

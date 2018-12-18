@@ -11,6 +11,14 @@ export declare class Config {
      */
     build(rootDir: string, cfg: IApidocWrapperConfig): IApidocOptionCollection;
     /**
+     * Loads configuration for vendor(apidoc) api
+     * @param cfg  main configuration to be consumed by "momo the pug apidoc wrapper".
+     * @param apidocCfg base configuration with default values taken from apidoc
+     * @param group  current single configuration group for a one namespace
+     * @returns apidocCfg
+     */
+    private loadVendorConfiguration;
+    /**
      * @param rootDir    project base path
      * @param outputDir  output directory
      * @param groupName  directory name for html files

@@ -10,7 +10,7 @@ class Config {
      */
     getDefaultCfg() {
         return {
-            excludeFilters: [],
+            excludeFilters: [''],
             includeFilters: ['.*\\.(clj|cls|coffee|cpp|cs|dart|erl|exs?|go|groovy|ino?|java|js|jsx|kt|litcoffee|lua|p|php?|pl|pm|py|rb|scala|ts|vue)$'],
             src: ['./'],
             dest: "./doc/",
@@ -19,12 +19,12 @@ class Config {
             apiprivate: false,
             verbose: false,
             debug: false,
-            parse: true,
+            parse: false,
             colorize: true,
-            filters: {},
-            languages: {},
-            parsers: {},
-            workers: {},
+            filters: null,
+            languages: null,
+            parsers: null,
+            workers: null,
             silent: false,
             simulate: false,
             markdown: true,
@@ -40,16 +40,31 @@ class Config {
         const apidocOptions = {};
         for (const group of cfg.groups) {
             const apidocCfg = this.getDefaultCfg();
-            apidocCfg.config = cfg.global.configDir || apidocCfg.config;
-            apidocCfg.includeFilters = group.sourceDir || apidocCfg.includeFilters;
-            apidocCfg.debug = cfg.debug || apidocCfg.debug;
-            apidocCfg.lineEnding = cfg.lineEnding || apidocCfg.lineEnding;
+            this.loadVendorConfiguration(cfg, apidocCfg, group);
+            // apidoc configuration
             apidocCfg.src = this.buildSrcDir(rootDir, cfg.global.sourceDir, group.sourceDir);
             apidocCfg.dest = this.buildOutputDir(rootDir, cfg.global.outputDir, group.groupName);
             apidocOptions[group.groupName] = apidocCfg;
+            // printing debug messages
             TerminalLog_1.TerminalLog.notice(`[${group.groupName}]:\n\t${apidocCfg.src.join("\n")}\n`, cfg.debugWrapper || false);
         }
         return apidocOptions;
+    }
+    /**
+     * Loads configuration for vendor(apidoc) api
+     * @param cfg  main configuration to be consumed by "momo the pug apidoc wrapper".
+     * @param apidocCfg base configuration with default values taken from apidoc
+     * @param group  current single configuration group for a one namespace
+     * @returns apidocCfg
+     */
+    loadVendorConfiguration(cfg, apidocCfg, group) {
+        if (cfg.vendor) {
+            apidocCfg.debug = cfg.vendor.debug || apidocCfg.debug;
+            apidocCfg.lineEnding = cfg.vendor.lineEnding || apidocCfg.lineEnding;
+        }
+        apidocCfg.config = cfg.global.configDir || apidocCfg.config;
+        apidocCfg.includeFilters = group.sourceDir || apidocCfg.includeFilters;
+        return apidocCfg;
     }
     /**
      * @param rootDir    project base path
