@@ -7,7 +7,7 @@ import { IApidocWrapperConfig } from "./interfaces/IApidocWrapperConfig";
 export interface WrapperCMDOptions {
     groupsToDocument: string[],
     watch?: boolean,
-    triggerInitialBuilding?: boolean,
+    avoidInitialBuilding?: boolean,
     workingdir: string,
     configFilePath: string,
     configFile: string
@@ -16,14 +16,14 @@ export interface WrapperCMDOptions {
 export function wrappApidoDocumentation(cmdOptions: WrapperCMDOptions) {
     // resolving cwd directory
     if (!fs.existsSync(cmdOptions.configFilePath)) {
-        TerminalLog.err(`Not found ${cmdOptions.configFile} in ${cmdOptions.workingdir}`);
+        TerminalLog.err(`Not found ${cmdOptions.configFile} in ${cmdOptions.workingdir}`, true);
         process.exit(1);
     }
 
-    if (cmdOptions.triggerInitialBuilding === true) {
+    if (cmdOptions.avoidInitialBuilding === true) {
         return;
     }
-    
+
     const jsonConfig: IApidocWrapperConfig = require(cmdOptions.configFilePath);
     ApidocWrapper.build(cmdOptions.workingdir, jsonConfig).document(cmdOptions.groupsToDocument);
 }

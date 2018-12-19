@@ -52,7 +52,7 @@ export class Config {
             apidocCfg.dest = this.buildOutputDir(rootDir, cfg.global.outputDir, group.groupName);
             apidocOptions[group.groupName] = apidocCfg;
             // printing debug messages
-            TerminalLog.notice(`[${group.groupName}]:\n\t${apidocCfg.src.join("\n")}\n`, cfg.debugWrapper || false);
+            TerminalLog.notice(`[Loaded ${group.groupName}]:\n\t${apidocCfg.src.join("\n")}\n`, cfg.debugWrapper || false);
         }
         return apidocOptions;
     }
